@@ -1,0 +1,7 @@
+{
+  "url": "https://YOUR-USERNAME.github.io/YOUR-REPO/index.html",
+  "title": "SBD Upload Monitor",
+  "icon": "https://YOUR-USERNAME.github.io/YOUR-REPO/icon.png",
+  "description": "Job file uploads per surveyor, by day, week and month",
+  "extensionType": ["project"]
+}

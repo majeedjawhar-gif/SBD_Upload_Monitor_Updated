@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://components.connect.trimble.com; style-src 'self'; img-src 'self' data:; connect-src https://*.connect.trimble.com; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SBD Upload Monitor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SBD <span>Upload Monitor</span></h1>
+  <div class="sub">Trimble Connect · Job and CSV file uploads</div>
+</header>
+<div class="demo" id="status" role="status"></div>
+
+<div class="grid kpis">
+  <div class="card kpi"><b id="kToday">–</b><span>Files uploaded today</span></div>
+  <div class="card kpi"><b id="kWeek">–</b><span>Uploaded in the last 7 days</span></div>
+  <div class="card kpi"><b id="kMonth">–</b><span>Uploaded in the last 30 days</span></div>
+  <div class="card kpi"><b id="kActive">–</b><span>Active surveyors (30 days)</span></div>
+</div>
+
+<div class="card">
+  <h2>Files uploaded</h2>
+  <div class="bar">
+    <div class="seg" id="seg"><button data-p="day" class="on">Day</button><button data-p="week">Week</button><button data-p="month">Month</button></div>
+    <select id="typ" aria-label="File type"><option value="all">Job + CSV files</option><option value="job">Job files only</option><option value="csv">CSV files only</option></select>
+    <select id="sel" aria-label="Surveyor"></select>
+    <button id="refresh" class="rf" type="button">Refresh</button>
+    <span class="sub" id="cap"></span>
+  </div>
+  <div class="chart" id="chart"></div>
+  <div class="labels" id="labels"></div>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Uploads by surveyor · last 30 days</h2>
+    <div class="tw"><table><thead><tr><th>Surveyor</th><th>Job files</th><th>CSV files</th><th>Total</th></tr></thead><tbody id="tbody"></tbody></table></div>
+  </div>
+  <div class="card">
+    <h2>Recent uploads</h2>
+    <ul id="recent"></ul>
+  </div>
+</div>
+
+<div class="card sect">
+  <h2>Files uploaded by each surveyor</h2>
+  <div id="csv" class="csvlist"></div>
+</div>
+</div>
+
+<script src="https://components.connect.trimble.com/trimble-connect-workspace-api/index.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

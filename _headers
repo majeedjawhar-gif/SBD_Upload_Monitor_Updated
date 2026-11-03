@@ -1,0 +1,8 @@
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://components.connect.trimble.com; style-src 'self'; img-src 'self' data:; connect-src https://*.connect.trimble.com; base-uri 'none'; form-action 'none'; frame-ancestors https://*.connect.trimble.com
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow
